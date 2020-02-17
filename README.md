@@ -46,3 +46,8 @@ POST /user  - Registra un usuario en la bd, siempre y cuando se respeten los for
 POST /getAllUsers - Retorna todos los usuarios registrados. Requiere de un token.
 
          El token se agrega como header, con la llave "token". No requiere de un body
+         
+
+Para correr la API en la máquina virtual de JAVA, solo se necesita clonar el repositorio y ejecutar este comando en la raiz del proyecto:
+
+         gradle bootrun
