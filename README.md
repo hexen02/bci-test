@@ -3,6 +3,8 @@ Examen postulación BCI
 
 API mantenedora de usuarios, la cual es capaz de registrar nuevos usuarios junto con sus teléfonos. Debe existir un usuario administrador logueado para poder registrar usuarios
 
+Los diagramas están en la carpeta "diagrams"
+
 Endpoints:
 
 POST /login - Se encarga de verificar el correo y contraseña existentes en la bd, y provee un token para utilizar la API. 
