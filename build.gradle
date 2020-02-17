@@ -1,0 +1,38 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.4.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'com.bci.apps'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+	compile group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.0'
+    compile 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.3'	
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+	testCompile group: 'org.mockito', name: 'mockito-core', version: '3.2.4'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+	compile 'io.jsonwebtoken:jjwt-api:0.11.0'
+    runtime 'io.jsonwebtoken:jjwt-impl:0.11.0',
+            'org.bouncycastle:bcprov-jdk15on:1.60',
+            'io.jsonwebtoken:jjwt-jackson:0.11.0'
+}
+
+configurations {
+    all {
+          exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+      }
+}
+
+test {
+	useJUnitPlatform()
+}
