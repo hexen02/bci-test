@@ -16,7 +16,7 @@ import com.bci.apps.bcitest.in.UserIn;
 import com.bci.apps.bcitest.jpa.PhoneRepository;
 import com.bci.apps.bcitest.jpa.UserRepository;
 import com.bci.apps.bcitest.model.UserEntity;
-import com.bci.apps.bcitest.out.UserOUT;
+import com.bci.apps.bcitest.out.UserOut;
 
 public class ServiceTest {
   
@@ -63,7 +63,7 @@ public class ServiceTest {
     when(userRepo.searchEmail(userIn.getEmail())).thenReturn(0);
     when(userRepo.save(any(UserEntity.class))).thenReturn(userEntity);
 
-    UserOUT userOut = service.saveUser(userIn, token);
+    UserOut userOut = service.saveUser(userIn, token);
 
     assertNotNull(userOut);
   }
@@ -139,7 +139,7 @@ public class ServiceTest {
       service.saveUser(userIn, token);
     }
     catch(Exception e) {
-      assertEquals("El correo ya está registrado", e.getMessage());
+      assertEquals("El correo ya estï¿½ registrado", e.getMessage());
     }
 
   }
@@ -177,7 +177,7 @@ public class ServiceTest {
       service.saveUser(userIn, token);
     }
     catch(Exception e) {
-      assertEquals("La contraseña no cumple con el formato (una mayuscula, letras minúsculas, y dos números)",e.getMessage());
+      assertEquals("La contraseï¿½a no cumple con el formato (una mayuscula, letras minï¿½sculas, y dos nï¿½meros)",e.getMessage());
     }
 
   }

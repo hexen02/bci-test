@@ -31,7 +31,7 @@ public class RegisterController {
     logger.info("Token: " + token);
 
     if (token == null || !JwtUtil.checkToken(token)) {
-      return new ResponseEntity<>(new ErrorOut("El token es nulo o inv·lido"),
+      return new ResponseEntity<>(new ErrorOut("El token es nulo o inv√°lido"),
           HttpStatus.UNAUTHORIZED);
     }
 
@@ -70,7 +70,7 @@ public class RegisterController {
     logger.info("Token: " + token);
 
     if (token == null || !JwtUtil.checkToken(token)) {
-      return new ResponseEntity<>(new ErrorOut("El token es nulo o inv·lido"),
+      return new ResponseEntity<>(new ErrorOut("El token es nulo o inv√°lido"),
           HttpStatus.UNAUTHORIZED);
     }
 

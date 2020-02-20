@@ -16,7 +16,7 @@ import org.springframework.http.ResponseEntity;
 import com.bci.apps.bcitest.in.PhoneIn;
 import com.bci.apps.bcitest.in.UserIn;
 import com.bci.apps.bcitest.out.LoginOut;
-import com.bci.apps.bcitest.out.UserOUT;
+import com.bci.apps.bcitest.out.UserOut;
 import com.bci.apps.bcitest.service.UserService;
 
 public class RegisterControllerTest {
@@ -89,7 +89,7 @@ public class RegisterControllerTest {
 
     String token = loginOut.getToken();
 
-    when(service.saveUser(userIn, token)).thenReturn(new UserOUT());
+    when(service.saveUser(userIn, token)).thenReturn(new UserOut());
     
     ResponseEntity<Object> responseRegister = controller.userRegister(token, userIn);
     

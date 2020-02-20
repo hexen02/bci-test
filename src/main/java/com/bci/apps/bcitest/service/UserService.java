@@ -15,7 +15,7 @@ import com.bci.apps.bcitest.jpa.PhoneRepository;
 import com.bci.apps.bcitest.jpa.UserRepository;
 import com.bci.apps.bcitest.model.PhoneEntity;
 import com.bci.apps.bcitest.model.UserEntity;
-import com.bci.apps.bcitest.out.UserOUT;
+import com.bci.apps.bcitest.out.UserOut;
 
 @Service
 public class UserService {
@@ -45,7 +45,7 @@ public class UserService {
   }
 
   @Transactional
-  public UserOUT saveUser(UserIn userIn, String token) throws Exception {
+  public UserOut saveUser(UserIn userIn, String token) throws Exception {
     logger.info("saveUser starts");
 
     if (!checkEmail(userIn.getEmail())) {
@@ -55,12 +55,12 @@ public class UserService {
     int count = userRepository.searchEmail(userIn.getEmail());
 
     if (count > 0) {
-      throw new Exception("El correo ya está registrado");
+      throw new Exception("El correo ya estï¿½ registrado");
     }
 
     if (!checkPassword(userIn.getPassword())) {
       throw new Exception(
-          "La contraseña no cumple con el formato (una mayuscula, letras minúsculas, y dos números)");
+          "La contraseï¿½a no cumple con el formato (una mayuscula, letras minï¿½sculas, y dos nï¿½meros)");
     }
 
     UserEntity userEntity = new UserEntity();
@@ -79,7 +79,7 @@ public class UserService {
       throw new HibernateError(e.getMessage());
     }
 
-    UserOUT userOut = new UserOUT();
+    UserOut userOut = new UserOut();
     userOut.setId(userSaved.getId());
     userOut.setCreated(new Date());
     userOut.setModified(new Date());
